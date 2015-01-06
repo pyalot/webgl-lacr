@@ -42,7 +42,7 @@ vertex:
             float neighbor2Height = getHeight(neighbor2Position);
 
             float neighborHeight = (neighbor1Height+neighbor2Height)/2.0;
-            float yOffset = mix(neighborHeight, ownHeight, morphFactor);
+            float yOffset = mix(ownHeight, neighborHeight, morphFactor);
 
             gl_Position = proj * view * vec4(ownPosition.x, yOffset, ownPosition.y, 1);
         }

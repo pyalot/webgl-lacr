@@ -109,8 +109,8 @@ vertex:
         vec2 cameraDelta = abs(pos - cameraPosition);
         float chebyshevDistance = max(cameraDelta.x, cameraDelta.y);
         morphFactor = linstep(
-            gridSize/2.0-1.0,
             gridSize/4.0+1.0,
+            gridSize/2.0-1.0,
             chebyshevDistance
         );
 
@@ -122,7 +122,7 @@ vertex:
             vec3 neighbor2Position = getOffsetPosition(neighbor2Coord, worldCameraPosition);
 
             vec3 neighborPosition = (neighbor1Position+neighbor2Position)/2.0;
-            vec3 resultPosition = mix(neighborPosition, ownPosition, morphFactor);
+            vec3 resultPosition = mix(ownPosition, neighborPosition, morphFactor);
             gl_Position = proj * view * vec4(resultPosition, 1);
         }
         else{
