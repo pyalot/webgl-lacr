@@ -1,0 +1,61 @@
+@import url("input.less");
+@import url("functions.less");
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    .userSelect(none);
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+    @media (orientation:landscape){
+        .flex(row);
+    }
+    @media (orientation:portrait){
+        .flex(column-reverse);
+    }
+}
+
+canvas{
+    .grow(1);
+
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.7);
+}
+
+div.controls{
+    @media (orientation:landscape){
+        .flex(column);
+        .axisalign(flex-start);
+        .crossalign(flex-start);
+        width: 260px;
+    }
+    @media (orientation:portrait){
+        .flex(row);
+        .axisalign(flex-start);
+        .crossalign(flex-start);
+    }
+
+    padding: 5px;
+    background: linear-gradient(to bottom, #eaeaea 0%,#bfbfbf 100%);
+
+    > div{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        > label{
+            display: inline-block;
+            width: 100px;
+        }
+    }
+}

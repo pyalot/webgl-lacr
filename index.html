@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="//cdn.webglstats.com/stat.js" defer="defer" async="async"></script>
+        <script src="lib/webgl-debug.js"></script>
+        <script src="lib/webgl-perf.js"></script>
+        <script src="lib/jquery-2.1.1.min.js"></script>
+        <script src="code.js"></script>
+    </head>
+    <body>
+        <div class="controls">
+            <div>
+                <label>Grid Size</label>
+                <select id="grid-size">
+                    <option>16</option>
+                    <option>32</option>
+                    <option>64</option>
+                    <option>128</option>
+                    <option>256</option>
+                    <option>512</option>
+                    <option value="1024">1024: expensive</option>
+                    <option value="2048">2048: very expensive</option>
+                </select>
+            </div>
+            <div>
+                <label>Grid Lines</label>
+                <input id="grid-lines" type="checkbox" checked="checked"></input>
+            </div>
+        </div>
+        <canvas id="webgl"></canvas>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+.flex-display(){
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+}
+
+.flex-direction(@direction: row){
+    -webkit-flex-direction: @direction;
+       -moz-flex-direction: @direction;
+        -ms-flex-direction: @direction;
+            flex-direction: @direction;
+}
+
+.flex(@direction: row){
+    .flex-display();
+    .flex-direction(@direction);
+}
+
+.crossalign(@align: flex-start){
+    -webkit-align-items: @align;
+       -moz-align-items: @align;
+        -ms-align-items: @align;
+            align-items: @align;
+}
+
+.grow(@grow: 1){
+    -webkit-flex-grow: @grow;
+       -moz-flex-grow: @grow;
+        -ms-flex-grow: @grow;
+            flex-grow: @grow;
+}
+
+.axisalign(@justify: flex-start){
+    -webkit-justify-content: @justify;
+       -moz-justify-content: @justify;
+        -ms-justify-content: @justify;
+            justify-content: @justify;
+}
+
+.userSelect(@value: none){
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
